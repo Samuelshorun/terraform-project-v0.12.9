@@ -11,7 +11,7 @@ resource "azurerm_resouce_group" "rg" {
     location    = "West Euroup"
 }
 
-data "azurerm_client_config "current" {}
+# data "azurerm_client_config "current" { }
 
 resource "azurerm_key_vault" "rg" {
     name                = "kvault01"

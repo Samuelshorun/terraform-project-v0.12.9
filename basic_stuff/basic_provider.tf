@@ -3,7 +3,7 @@
 # declaration of basic provider
 
 provider "azurerm" {
-    features
+    features {}
 }
 
 
@@ -21,5 +21,5 @@ terraform {
 }
 
 provider "azurerm" {
-    features
+    features {}
 }

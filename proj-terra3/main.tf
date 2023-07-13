@@ -11,17 +11,17 @@ resource "azurerm_resouce_group" "rg" {
     location    = "West Euroup"
 }
 
-data "azurerm_client_config "current" {}
+# data "azurerm_client_config "current" {}
 
 # variable Reference sample with storage account declaration************
 
-/*resource "azurerm_storage_account" "rg" {
+resource "azurerm_storage_account" "rg" {
     name                        = "storagea01"
     resource_group_name         = azurerm_resouce_group.rg.name
     location                    = azurerm_resouce_group.rg.location
     account_tier                = "standard"
     account_replication_type    = "LRS"
-}*/
+}
 
 /*resource "azurerm_storage_account" "rg" {
     name                        = "storagea01"
@@ -38,7 +38,7 @@ resource "azure_storage_account" "storagea01-rg" {
     location                    = "westeurope"
     account_replication_type    = "LRS"
     account_tier                = "standard"
-    resource_group_name         == azurerm_resouce_group.rg.name
+    resource_group_name         = azurerm_resouce_group.rg.name
 }
 
 
