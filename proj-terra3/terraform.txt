@@ -1,0 +1,40 @@
+#terraform commmands
+
+terraform fmt                   // rewrite config files to canonical format.
+terraform validate              // validate terraform config files.
+terraform providers             // to print the tree of all providers used in config files.
+terraform show                  // to inspect the terraform state or plan file.
+terraform plan -out=newplan     // save the plan
+terraform apply "newplan"       // will apply above plan <newplan>
+terraform apply -auto-approve   // grant auto approval when applying terraform plan.
+
+terraform plan -destroy         // to determine the order in which things must be destroyed
+terraform destroy               // to destroy with acknowledgement
+terraform destroy -auto-apply   // to destroy without acknowledgement
+
+
+# terraform auto remove taint in the next generated excution plan.
+
+terraform taint                 // manually taint resource not working well.
+terraform untaint               // undo taint
+
+
+# Virtual network Attribute Reference
+
+data "azurerm_virtual_network" "example" {
+    name                = "production"
+    resource_group_name = "networking"
+}
+
+
+id                  - the ID of the Virtual network.
+location            - location of the Virtual network.
+address_space       - the list of address space used by the virtual network.
+dns_servers         - the list of DNS servers used by the virtual network.
+guid                - the GUID of the vertual network
+subnets             - the list of name of the subnets that are attached to the virtual network
+vnet_peerings       - A mapping of name virtual network ID of the virtual network peerings.
+
+example : id = data.azurerm_virtual_network.example.id
+
+

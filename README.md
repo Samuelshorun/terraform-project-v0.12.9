@@ -1,1 +1,1 @@
-# This a Terraform project based on version 12.9 wiht Azure as cloud Provider 
+# This a Terraform project based on version 12.9 with Azure as cloud Provider 

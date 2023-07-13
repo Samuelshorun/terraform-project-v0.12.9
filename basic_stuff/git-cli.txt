@@ -1,0 +1,6 @@
+#set username
+git config --global user.name "<firstname> <lastname>"
+
+
+#set email address
+git config --global user.email "<enterEmailAddress>"
