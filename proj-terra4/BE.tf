@@ -106,6 +106,10 @@ resource "azurerm_virtual_machine_extension "be-rg" {
     virtual_machine_id          = azurerm_virtual_machine.be-rg.id
     publisher                   = "Microsoft.Compute"
     type                        = "CustomScriptEtention"
-    tpye_hander_version          = ""
-  
+    tpye_handler_version        = "1.10"
+    settings                    = <<SETTINGS
+    {
+        "commandToExecute": "powershell Install-WindowsFeature -name Web-Server -IncludeManagementTools;"
+    }
+  SETTINGS
 }
