@@ -101,15 +101,15 @@ resource "azure_virtual_machine" "be-rg" {
   
 }
 
-resource "azurerm_virtual_machine_extension "be-rg" {
-    name                        = "iis-extention"
+resource "azurerm_virtual_machine_extension" "be-rg" {
+    name                        = "iis-extension"
     virtual_machine_id          = azurerm_virtual_machine.be-rg.id
     publisher                   = "Microsoft.Compute"
-    type                        = "CustomScriptEtention"
+    type                        = "CustomScriptExtension"
     tpye_handler_version        = "1.10"
     settings                    = <<SETTINGS
     {
-        "commandToExecute": "powershell Install-WindowsFeature -name Web-Server -IncludeManagementTools;"
-    }
-  SETTINGS
+        "commandToExecute": "powershell Install-WindowsFeature -name Web-Server -IncludeManagementTools";
+        } 
+        SETTINGS
 }
