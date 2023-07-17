@@ -52,7 +52,7 @@ resource "azurerm_network_security_rule" "be-rg" {
     priority                    = 100
     direction                   = "Inbound"
     access                      = "allow"
-    protocol                    = "Tcp"
+    protocol                    = "TCP"
     source_port_range           = "*"
     destination_port_range      = "80"
     source_address_range        = "*"
