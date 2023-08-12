@@ -3,6 +3,7 @@
 #provider declaration
 
 provider "azurerm" {
+    
     features {}
 }
 
