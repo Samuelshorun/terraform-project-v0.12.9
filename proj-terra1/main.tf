@@ -1,10 +1,11 @@
 # terraform version1.2.9 
 
 #provider declaration
+
 provider "azurerm" {
-    version = "= 2.18"
     features {}
 }
+
 
 #resource group declaration
 resource "azurerm_resouce_group" "rg"{
